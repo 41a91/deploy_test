@@ -3,6 +3,8 @@ var app = express();
 
 app.set("view engine","ejs");
 
+var port = process.env.port || 3000;
+
 app.all("/",function(req, res, next)
 {
     console.log("Getting secret stuff");
@@ -23,4 +25,4 @@ app.post("/",function(req,res)
 
 });
 
-app.listen("8080");
+app.listen(port);
